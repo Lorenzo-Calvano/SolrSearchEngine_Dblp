@@ -1,0 +1,31 @@
+SRS SearchDBLP
+
+:::Obiettivo:::
+Creare motore di ricerca in grado di reperire le informazioni 
+disponibili nel sito dblp.org riguardanti pubblicazioni scientifiche 
+e ricercatori 
+
+
+
+:::Strumenti Utilizzati:::
+
+PRIMA PARTE
+-Solr, motore di ricerca basato su Lucene
+-XSLT e XML per trattare i dati dell'applicativo
+-Java linguaggio di programmazione
+-Applicazione Java per indicizzare dblp.xml e renderlo disponibile su Solr
+
+SECONDA PARTE
+-Scopus, utile per ottenere gli abstract delle pubblicazioni
+
+
+
+:::Funzioni:::
+
+PRIMA PARTE
+-ricerca per autore, per titolo
+-raggruppamento per annata, sede
+-per importanza (es: sede prestigiosa, rilevanza)
+
+SECONDA PARTE
+-per similarità di argomenti trattati

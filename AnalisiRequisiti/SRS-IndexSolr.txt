@@ -1,0 +1,24 @@
+SRS IndexSolr
+
+:::Obiettivo:::
+Creare un'applicazione Java che permetta di indicizzare correttamente su Solr i file xml 
+del sito dblp, ponendo le basi per la realizzazione di un motore di ricerca sui documenti
+contenuti in tali file
+
+
+
+:::Strumenti Utilizzati:::
+-Solr, motore di ricerca basato su Lucene
+-Java, linguaggio di programmazione
+-XSLT e XML, per il trattamento dei dati in ingresso
+
+
+
+:::Funzioni:::
+-Rendere ben formato il documento dblp.xml, inserendo nella sua intestazione le entità necessarie
+a tale scopo, presenti nel file dblp.dtd corrispondente
+-Dividere in parti eque il file dblp.xml, ognuno file xml ben formato, per suddividere in parti
+sostenibili l'indicizzazione su Solr
+-Indicizzare i file ottenuti sul motore di ricerca
+
+

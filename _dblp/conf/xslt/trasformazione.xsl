@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+   <add> 
+   <xsl:apply-templates/>
+   </add>
+</xsl:template>
+
+
+
+<!-- match dei documenti possibili -->
+
+<xsl:template match="article">
+   <doc>
+   <field name="type">article</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="inproceedings">
+   <doc>
+   <field name="type">inproceedings</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="phdthesis">
+   <doc>
+   <field name="type">phdthesis</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="proceedings">
+   <doc>
+   <field name="type">proceedings</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="book">
+   <doc>
+   <field name="type">book</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="incollection">
+   <doc>
+   <field name="type">incollection</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="mastersthesis">
+   <doc>
+   <field name="type">mastersthesis</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="www">
+   <doc>
+   <field name="type">www</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="data">
+   <doc>
+   <field name="type">data</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+<xsl:template match="person">
+   <doc>
+   <field name="type">person</field>
+   <xsl:apply-templates select="@*" />
+   <xsl:apply-templates />
+   </doc>
+</xsl:template>
+
+
+
+<!-- match dei sottoelementi dei documenti -->
+
+<xsl:template match="author">
+	<field name="author">  <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="ee">
+	<field name="ee"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="editor">
+	<field name="editor"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="title"> 
+    <field name="title"> <xsl:apply-templates select="@*" />
+        <xsl:apply-templates select="text()" />
+   </field>
+</xsl:template>
+
+<xsl:template match="address">
+	<field name="address"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="booktitle">
+	<field name="booktitle"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="pages">
+	<field name="pages"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="year">
+	<field name="year"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="journal">
+	<field name="journal"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="volume">
+	<field name="volume"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="number">
+	<field name="number"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="month">
+	<field name="month"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="url">
+	<field name="url"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="cdrom">
+	<field name="cdrom"> 
+            <xsl:value-of select="." /> 
+        </field>
+</xsl:template>
+
+<xsl:template match="cite">
+	<field name="cite"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="publisher">
+	<field name="publisher"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="note">
+	<field name="note"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="crossref">
+	<field name="crossref"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="isbn">
+	<field name="isbn"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="series">
+	<field name="series"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="school">
+	<field name="school"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="chapter">
+	<field name="chapter"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+<xsl:template match="publnr">
+	<field name="publnr"> <xsl:value-of select="." />  </field>
+	<xsl:apply-templates select="@*" />
+</xsl:template>
+
+
+<!-- match degli attributi dei documenti-->
+
+<xsl:template match="@mdate">
+</xsl:template>
+
+<xsl:template match="@key">
+   <field name="key"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+<xsl:template match="@publtype">
+</xsl:template>
+
+<xsl:template match="@reviewid">
+</xsl:template>
+
+<xsl:template match="@rating">
+   <field name="rating"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+<xsl:template match="@cdate">
+</xsl:template>
+
+
+
+<!-- match degli attributi dei sottoelementi
+
+<xsl:template match="@aux">
+   <field name="aux"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+<xsl:template match="@bibtex">
+   <field name="bibtex"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+
+<xsl:template match="@orcid">
+   <field name="orcid"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+
+<xsl:template match="@label">
+   <field name="label"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+
+<xsl:template match="@type">
+   <field name="att-type"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+
+<xsl:template match="@ref">
+   <field name="att-ref"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template>
+
+
+<xsl:template match="@href">
+   <field name="href"> 
+     <xsl:value-of select="."/>
+   </field>
+</xsl:template> -->
+
+
+
+</xsl:stylesheet>

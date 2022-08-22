@@ -1,0 +1,22 @@
+Moduli dell'applicazione:
+
+--GUI 
+	Necessario per mostrare a video i risultati di ricerca, assolutamente slegata dal core dell'applicazione.
+	Avrà barra di ricerca e checkbox per le scelte.
+
+--CONTROLLER
+	Gestisce le interazioni possibili con la GUI, trasformando gli input in task da portare a termine utilizzando
+	i vari moduli dell'applicazione.
+
+--CONNECTION
+	Modulo per stabilire le connessioni con Solr, inviare le richieste query e reperire le risposte.
+	Si occupa di gestire eventuali errori nella connessione.
+	Possibile utilizzo di SolrJ oppure del classico servizio RESTlet.
+
+--PARSER/RICERCA
+	Componente che, date le risposte XML o JSON del server Solr, costruisce un insieme di oggetti comprensibili
+	dall'applicazione per mostrarli a video.
+
+--ENTITIES
+	Insieme di possibili oggetti-risultato della ricerca, con i metodi classici degli oggetti Java.
+	
